@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
+import { Sidebar } from '@/components/layout/Sidebar'
 import './globals.css'
 
 const _geist = Geist({ subsets: ["latin"] });
@@ -35,9 +36,16 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body className="font-sans antialiased">
-        {children}
+    <html lang="es">
+      <body className="font-sans antialiased bg-[#f4f4f4]">
+        <div className="flex h-screen overflow-hidden">
+          <Sidebar />
+          <div className="flex-1 overflow-auto bg-[#f4f4f4]">
+            <main className="p-4 md:p-6 lg:p-8">
+              {children}
+            </main>
+          </div>
+        </div>
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>
