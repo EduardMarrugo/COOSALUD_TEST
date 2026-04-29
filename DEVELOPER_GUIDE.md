@@ -82,3 +82,13 @@ El proyecto utiliza un sistema de diseño definido en `app/globals.css`. Es impo
 
 El proyecto tiene un **Sidebar** persistente. Si estás en vista móvil, el Sidebar se oculta automáticamente y se accede mediante un botón tipo hamburguesa en la barra superior.
 El Dashboard principal (`app/page.tsx`) sirve como índice visual de todos los prototipos construidos.
+
+---
+
+## Diseño Responsivo (Mobile-First)
+
+Es un **requisito estricto** que todas las vistas y componentes nuevos se construyan con enfoque Mobile-First y sean completamente funcionales en pantallas de celular.
+
+- **Grillas**: Los formularios y layouts de tarjetas deben ser `grid-cols-1` por defecto, expandiéndose en pantallas más grandes (`md:grid-cols-2`, `lg:grid-cols-3`).
+- **Layouts y Navegación**: Usa `flex-col md:flex-row` en contenedores principales para evitar que barras laterales o encabezados rompan el layout en móviles.
+- **Tablas**: Cualquier tabla de datos debe ir envuelta en un `div` con la clase `overflow-x-auto` para permitir *scroll* horizontal sin dañar el tamaño total de la página en celulares.

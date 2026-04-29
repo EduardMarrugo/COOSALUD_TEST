@@ -48,3 +48,11 @@ When adding a new prototype:
 1. Create a new folder in `app/` (e.g., `app/nuevo-prototipo/`).
 2. Add a `page.tsx` inside.
 3. Link the new prototype in the `Sidebar` and the Main `Dashboard` cards.
+
+## RESPONSIVE DESIGN (MOBILE-FIRST)
+
+All features **must** be fully responsive and tested on mobile screens. 
+- Use Tailwind's responsive prefixes (`md:`, `lg:`) to adjust layouts, text sizes, and padding.
+- Grids must collapse to a single column on mobile (`grid-cols-1 md:grid-cols-X`).
+- Ensure navigation headers stack correctly (`flex-col md:flex-row`).
+- Do not let tables overflow the screen; use wrappers with `overflow-x-auto`.
